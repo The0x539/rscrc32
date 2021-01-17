@@ -1,0 +1,15 @@
+[package]
+name = "rscrc32"
+version = "0.1.0"
+authors = ["The0x539t@github.com:The0x539/rscrc32.git"]
+edition = "2018"
+
+[dependencies]
+crc32fast = "1.2.1"
+memmap = "0.7"
+regex = "1"
+walkdir = "2"
+
+[profile.release]
+panic = "abort"
+lto = "fat"
