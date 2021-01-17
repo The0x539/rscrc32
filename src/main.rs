@@ -56,10 +56,8 @@ fn check_item(path: &str, multiple_args: bool) -> std::io::Result<()> {
         {
             if let Ok(metadata) = entry.metadata() {
                 if metadata.is_file() {
-                    check_file(
-                        entry.path().to_str().expect("invalid unicode in path"),
-                        true,
-                    )?;
+                    let path = entry.path().to_str().expect("invalid unicode in path");
+                    check_file(path, true)?;
                 }
             }
         }
